@@ -179,8 +179,8 @@ console.log(toHtml(tree))
 This will give me the HTML
 
 ```html
-<span class="token string">"use strict"</span>
-<span class="token punctuation">;</span>
+<span>"use strict"</span>
+<span>;</span>
 
 ```
 

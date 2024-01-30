@@ -24,7 +24,7 @@ Let's work with a common layout that has the basics:
 The first step is to create the HTML. It's just a parent with three children. Nothing out of the ordinary.
 
 ```html
-<div class="page">
+<div>
 	<header></header>
 	<aside></aside>
 	<main></main>

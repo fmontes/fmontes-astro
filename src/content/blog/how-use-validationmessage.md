@@ -19,23 +19,23 @@ We have the following form:
 
 ```html
 <form>
-    <div class="field">
+    <div>
         <label for="email">Email:</label>
         <input id="email" type="email" />
     </div>
-    <div class="field">
+    <div>
         <label for="url">Url:</label>
         <input id="url" type="url" />
     </div>
-    <div class="field">
+    <div>
         <label for="month">Month:</label>
         <input type="month" name="month" id="month" min="2022-06" />
     </div>
-    <div class="field">
+    <div>
         <label for="number">Min 1 & Max 100:</label>
         <input id="number" type="number" min="1" max="100" />
     </div>
-    <div id="message" class="msg">Here goes the validation message</div>
+    <div id="message">Here goes the validation message</div>
 </form>
 ```
 
