@@ -1,0 +1,31 @@
+---
+const { post } = Astro.props;
+
+const formattedDate = new Date(post.data.date.getTime() + 24 * 60 * 60 * 1000).toLocaleDateString('en-us', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<div class="title">
+  {
+    post.data.external ? (
+      <a href={post.data.url} target="_blank" class="unset hover:text-text-link">
+        <span>{post.data.title}</span>
+        <span>
+          <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square pt-1" />
+        </span>
+      </a>
+    ) : (
+      <a href={`/blog/${post.slug}`} class="unset hover:text-text-link">
+        {post.data.title}
+      </a>
+    )
+  }
+</div>
+<div class="text-text-muted text-sm italic">
+  <time datetime={post.data.date.toISOString()}>
+    {formattedDate}
+  </time>
+</div>

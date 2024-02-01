@@ -1,0 +1,38 @@
+---
+import '@fontsource-variable/inter';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ThemeScript from '../components/ThemeScript.astro';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html class="theme-sleek" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <slot name="meta" />
+    <ThemeScript />
+  </head>
+
+  <body class="min-h-screen max-w-3xl mx-auto px-6 sm:px-8">
+    <Header />
+    <main id="main">
+      <slot name="main" />
+    </main>
+    <Footer />
+    <style>
+      body {
+        display: grid;
+        grid-template-areas:
+          'header'
+          'main'
+          'footer';
+        grid-template-rows: 5rem minmax(0, 1fr) 5rem;
+        grid-template-columns: minmax(0, 1fr);
+      }
+      main {
+        grid-area: main;
+      }
+    </style>
+  </body>
+</html>
