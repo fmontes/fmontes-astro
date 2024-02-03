@@ -1,13 +1,13 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import DarkModeToggle from "./DarkModeToggle.astro";
+import HeaderLink from './HeaderLink.astro';
+import DarkModeToggle from './DarkModeToggle.astro';
+import { networks } from '../consts.ts';
 ---
 
 <header>
   <a
     class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
-    href="#main"
-  >
+    href="#main">
     Skip to content
   </a>
   <nav>
@@ -17,45 +17,25 @@ import DarkModeToggle from "./DarkModeToggle.astro";
         <li><HeaderLink href="/blog">Blog</HeaderLink></li>
         <li class="relative">
           <HeaderLink href="#">Projects</HeaderLink>
-          <span class="absolute rounded-sm top-[-4px] right-[-36px] bg-red-500 text-white px-[4px] py-[2px] text-[10px]">Soon</span>
+          <span
+            class="absolute rounded-sm top-[-4px] right-[-36px] bg-red-500 text-white px-[4px] py-[2px] text-[10px]">
+            Soon
+          </span>
         </li>
       </ul>
     </section>
   </nav>
-  <!-- <div
-    class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold"
-  >
-    <a
-      class="unset text-xl ml-4 hover:text-text-link"
-      href="https://instagram.com/fmontes"
-    >
-      <i
-        class="fa-brands fa-instagram"
-        aria-hidden="true"
-        title="Freddy Montes on Instagram"></i>
-      <span class="fa-sr-only">Freddy Montes on Instagram</span>
-    </a>
-    <a
-      class="unset text-xl ml-4 hover:text-text-link"
-      href="https://github.com/fmontes"
-    >
-      <i
-        class="fa-brands fa-github"
-        aria-hidden="true"
-        title="Freddy Montes on GitHub"></i>
-      <span class="fa-sr-only">Freddy Montes on GitHub</span>
-    </a>
-    <a
-      class="unset text-xl ml-4 hover:text-text-link"
-      href="https://twitter.com/fmontes"
-    >
-      <i
-        class="fa-brands fa-twitter"
-        aria-hidden="true"
-        title="Freddy Montes on Twitter"></i>
-      <span class="fa-sr-only">Freddy Montes on Twitter</span>
-    </a>
-  </div> -->
+  <div class="justify-self-end py-2 flex items-center content-center gap-3">
+    {
+      networks?.map((item) => (
+        <a href={item.url} target="_blank" rel="noopener noreferrer" class="unset">
+          <figure>
+            <Fragment set:html={item.svg} />
+          </figure>
+        </a>
+      ))
+    }
+  </div>
   <DarkModeToggle />
 </header>
 <style>
@@ -63,9 +43,6 @@ import DarkModeToggle from "./DarkModeToggle.astro";
     grid-area: header;
     display: grid;
     align-items: center;
-    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(
-        0,
-        max-content
-      );
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(0, max-content);
   }
 </style>
