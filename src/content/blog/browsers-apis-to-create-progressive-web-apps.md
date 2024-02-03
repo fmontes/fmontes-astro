@@ -2,6 +2,7 @@
 title: "Browser APIs to create progressive web apps"
 description: "We are going to explain the most important APIs available to create progressive web apps and publish them in the app stores."
 date: 2023-01-21
+tags: "web"
 ---
 
 

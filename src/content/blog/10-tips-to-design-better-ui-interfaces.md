@@ -2,6 +2,7 @@
 title: "10 tips for designing better UI interfaces"
 description: ""
 date: 2021-12-27
+tags: "ui"
 ---
 
 

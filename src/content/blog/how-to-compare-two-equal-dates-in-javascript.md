@@ -1,7 +1,8 @@
 ---
 title: "How to compare two equal dates in JavaScript"
-description: ""
+description: "The `Date` object in JavaScript is quite robust for working with dates, it allows you to compare if a date is greater or smaller than another, but when trying to compare if it is equal it fails."
 date: 2023-02-20
+tags: "javascript"
 ---
 
 

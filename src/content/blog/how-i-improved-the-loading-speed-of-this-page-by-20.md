@@ -2,6 +2,7 @@
 title: "How I improved the loading speed of this page by 20%."
 description: "Since I developed this site I knew that there were certain performance problems and that at some point I had to fix it, that point was yesterday."
 date: 2022-03-19
+tags: "web, css, javascript"
 ---
 
 

@@ -2,6 +2,7 @@
 title: "How to use validationMessage"
 description: "The HTMLObjectElement.validationMessage property represents an error message displayed if an object element is not valid, or an empty string if it is valid. It is used to implement custom error messages for form validation."
 date: 2023-01-01
+tags: "javascript"
 ---
 
 
