@@ -13,32 +13,40 @@ const posts = (await getCollection('tips')).sort((a, b) => {
 ---
 
 <PageLayout>
-  <BaseHead title={`${SITE_TITLE} | Blog`} description={`${SITE_DESCRIPTION}`} slot="meta" />
+  <BaseHead title={`${SITE_TITLE} | Tips`} description={`${SITE_DESCRIPTION}`} slot="meta" />
   <Fragment slot="main">
-    <section>
-      <ul>
-        {
-          posts.map((post) => {
-            const formattedDate = new Date(post.data.date.getTime() + 24 * 60 * 60 * 1000).toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            });
-            return (
-              <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-                <div class="title">
-                  <a href={`/tips/${post.slug}`} class="unset hover:text-text-link">
-                    {post.data.title}
-                  </a>
-                </div>
-                <div class="text-text-muted text-sm italic">
-                  <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
-                </div>
-              </li>
-            );
-          })
-        }
-      </ul>
+    <section class="grid grid-flow-row gap-4 sm:grid-cols-1 md:grid-cols-2">
+      <!-- <ul> -->
+      {
+        posts.map((post) => {
+          const formattedDate = new Date(post.data.date.getTime() + 24 * 60 * 60 * 1000).toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+          return (
+            <div class="rounded-md border-4 border-yellow-500" style="container-type: inline-size;">
+              <a href={`/tips/${post.slug}`} class="unset flex flex-col justify-center space-y-2 p-8 no-underline">
+                <h2 class="font-semibold leading-none" style="font-size: clamp(1rem, 10cqi, 3rem);">
+                  {post.data.title}
+                </h2>
+                <time class="text-sm opacity-60" datetime={post.data.date.toISOString()}>{formattedDate}</time>
+              </a>
+            </div>
+            // <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+            //   <div class="title">
+            //     <a href={`/tips/${post.slug}`} class="unset hover:text-text-link">
+            //       {post.data.title}
+            //     </a>
+            //   </div>
+            //   <div class="text-text-muted text-sm italic">
+            //     <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+            //   </div>
+            // </li>
+          );
+        })
+      }
+      <!-- </ul> -->
     </section>
   </Fragment>
 </PageLayout>
