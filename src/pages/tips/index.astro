@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 
-import BlogListItem from '../../components/BlogListItem.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 import BaseHead from '../../components/BaseHead.astro';
 
@@ -25,24 +24,19 @@ const posts = (await getCollection('tips')).sort((a, b) => {
             day: 'numeric',
           });
           return (
-            <div class="rounded-md border-4 border-yellow-500" style="container-type: inline-size;">
-              <a href={`/tips/${post.slug}`} class="unset flex flex-col justify-center space-y-2 p-8 no-underline">
-                <h2 class="font-semibold leading-none" style="font-size: clamp(1rem, 10cqi, 3rem);">
+            <div class="rounded-md bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300 p-1 transition-transform hover:scale-105 hover:-rotate-2 hover:shadow-sm">
+              <a
+                href={`/tips/${post.slug}`}
+                class="rounded h-full w-full bg-gray-800 unset flex flex-col justify-center space-y-2 p-8 no-underline"
+                style="container-type: inline-size;">
+                <h2 class="font-semibold leading-none text-white" style="font-size: clamp(1rem, 10cqi, 3rem);">
                   {post.data.title}
                 </h2>
-                <time class="text-sm opacity-60" datetime={post.data.date.toISOString()}>{formattedDate}</time>
+                <time class="text-sm text-gray-400" datetime={post.data.date.toISOString()}>
+                  {formattedDate}
+                </time>
               </a>
             </div>
-            // <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-            //   <div class="title">
-            //     <a href={`/tips/${post.slug}`} class="unset hover:text-text-link">
-            //       {post.data.title}
-            //     </a>
-            //   </div>
-            //   <div class="text-text-muted text-sm italic">
-            //     <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
-            //   </div>
-            // </li>
           );
         })
       }
