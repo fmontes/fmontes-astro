@@ -1,14 +1,16 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import HeaderLink from "./HeaderLink.astro";
+const lang = Astro.currentLocale || 'en';
 ---
 
 <Fragment>
   <nav class="hidden md:inline">
     <section class="text-text-bold">
       <ul class="unset flex gap-4 [&>li]:p-0">
-        <li><HeaderLink href="/">Home</HeaderLink></li>
-        <li><HeaderLink href="/blog">Blog</HeaderLink></li>
-        <li><HeaderLink href="/tips">Tips</HeaderLink></li>
+        <li><HeaderLink href={getRelativeLocaleUrl(lang, '/')}>Home</HeaderLink></li>
+        <li><HeaderLink href={getRelativeLocaleUrl(lang, '/blog')}>Blog</HeaderLink></li>
+        <li><HeaderLink href={getRelativeLocaleUrl(lang, '/tips')}>Tips</HeaderLink></li>
       </ul>
     </section>
   </nav>

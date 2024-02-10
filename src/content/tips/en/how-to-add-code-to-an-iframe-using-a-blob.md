@@ -2,7 +2,6 @@
 title: How to Add Code to an iFrame Using a Blob
 description: A simple guide to adding code to an iframe using a Blob. Ideal for developers working on web applications.
 date: 2024-02-08
-slug: how-to-add-code-to-an-iframe-using-a-blob
 ---
 
 Sometimes, you may need to dynamically add code to an iframe. This can be achieved using Blobs in JavaScript.

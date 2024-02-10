@@ -2,7 +2,6 @@
 title: Detecting User's Geolocation in JavaScript
 description: Learn how to detect the position of a user with the navigator.geolocation.getCurrentPosition method in JavaScript.
 date: 2024-02-08
-slug: detecting-users-geolocation-in-javascript
 ---
 
 In this tip, we will learn how to detect a user's position using JavaScript's Geolocation API.

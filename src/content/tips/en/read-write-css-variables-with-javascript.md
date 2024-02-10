@@ -2,7 +2,6 @@
 title: How to Read and Write CSS Variables with JavaScript
 description: Explore how to manipulate CSS variables directly from JavaScript, offering dynamic control over your webpage's styling.
 date: 2024-02-08
-slug: read-write-css-variables-with-javascript
 ---
 
 Discover the power of CSS variables and how you can manipulate them directly from JavaScript. It's a great way to dynamically control your webpage's styling.

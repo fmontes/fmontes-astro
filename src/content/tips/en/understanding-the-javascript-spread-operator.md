@@ -2,7 +2,6 @@
 title: Understanding the JavaScript Spread Operator
 description: A quick guide on how to use the JavaScript spread operator to manipulate arrays and objects.
 date: 2024-02-08
-slug: understanding-the-javascript-spread-operator
 ---
 
 The JavaScript spread operator is a useful tool for manipulating arrays and objects. 

@@ -1,4 +1,6 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 const { post } = Astro.props;
 
 const formattedDate = new Date(post.data.date.getTime() + 24 * 60 * 60 * 1000).toLocaleDateString('en-us', {
@@ -6,10 +8,14 @@ const formattedDate = new Date(post.data.date.getTime() + 24 * 60 * 60 * 1000).t
   month: 'short',
   day: 'numeric',
 });
+
+const url = post.slug.split('/').filter(Boolean).pop();
+
+const lang = Astro.currentLocale || 'en';
 ---
 
 <div class="title">
-  <a href={`/blog/${post.slug}`} class="unset hover:text-text-link">
+  <a href={getRelativeLocaleUrl(lang, `blog/${url}`)} class="unset hover:text-text-link">
     {post.data.title}
   </a>
 </div>

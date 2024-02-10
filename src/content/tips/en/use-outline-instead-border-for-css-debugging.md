@@ -2,7 +2,6 @@
 title: Use Outline Instead of Border for CSS Debugging
 description: A simple tip on using outline instead of border for CSS debugging because it doesn't alter the box size.
 date: 2024-02-08
-slug: use-outline-instead-border-for-css-debugging
 ---
 
 When debugging CSS, it's beneficial to use 'outline' instead of 'border' as it doesn't change the box size.

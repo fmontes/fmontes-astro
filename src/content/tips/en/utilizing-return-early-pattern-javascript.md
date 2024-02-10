@@ -2,7 +2,6 @@
 title: Utilizing the Return Early Pattern in JavaScript
 description: Learn how to write cleaner and more readable code by utilizing the return early pattern in JavaScript.
 date: 2024-02-08
-slug: utilizing-return-early-pattern-javascript
 ---
 
 The return early pattern is a popular technique in JavaScript that helps to make your code more readable and clean.

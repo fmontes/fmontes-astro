@@ -2,7 +2,6 @@
 title: Detect Media Query Changes with JavaScript
 description: Learn how to use JavaScript to detect changes in media queries, an essential skill for creating responsive web designs.
 date: 2024-02-08
-slug: detect-media-query-changes-with-javascript
 ---
 
 In today's responsive web design, detecting changes in media queries is crucial. JavaScript provides a way to do this.

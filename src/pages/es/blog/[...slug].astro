@@ -1,0 +1,27 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import BaseHead from '../../../components/BaseHead.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts
+    .filter((item) => item.slug.split('/')[0] === 'es')
+    .map((page) => {
+      const [lang, ...slug] = page.slug.split('/');
+
+      return { params: { lang, slug: slug.join('/') || undefined }, props: page };
+    });
+}
+
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost {...post.data}>
+  <BaseHead title={`${post.data.title}`} description={``} slot="meta" />
+  <Content slot="content" />
+</BlogPost>

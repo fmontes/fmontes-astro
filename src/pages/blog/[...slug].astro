@@ -5,14 +5,20 @@ import BaseHead from '../../components/BaseHead.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+
+	return posts.filter((item) => item.slug.split('/')[0] === 'en').map(page => {
+    const [lang, ...slug] = page.slug.split('/');		
+		
+    return { params: { lang, slug: slug.join('/') || undefined }, props: page };
+  });
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
+
+console.log(post);
+
 const { Content } = await post.render();
 ---
 

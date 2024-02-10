@@ -2,7 +2,6 @@
 title: Running Multiple Shell Commands Simultaneously
 description: Learn how to execute multiple shell commands at once, improving productivity and efficiency.
 date: 2024-02-08
-slug: running-multiple-shell-commands-simultaneously
 ---
 
 Executing several shell commands concurrently can save you time and enhance your workflow efficiency. Here’s how you do it.

@@ -3,13 +3,13 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import { getCollection } from 'astro:content';
 
-import PageLayout from '../../layouts/PageLayout.astro';
-import BaseHead from '../../components/BaseHead.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
+import BaseHead from '../../../components/BaseHead.astro';
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 
 const posts = (await getCollection('tips'))
-  .filter((item) => item.slug.split('/')[0] === 'en')
+  .filter((item) => item.slug.split('/')[0] === 'es')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const lang = Astro.currentLocale || 'en';

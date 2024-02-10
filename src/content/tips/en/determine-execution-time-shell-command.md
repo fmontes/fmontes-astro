@@ -2,7 +2,6 @@
 title: Determine the Execution Time of a Shell Command
 description: Learn how to track the time consumed by a shell command in a Unix-based system.
 date: 2024-02-08
-slug: determine-execution-time-shell-command
 ---
 
 Ever wondered how long your shell command took to execute? Here's a simple trick to find out.

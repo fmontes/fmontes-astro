@@ -1,13 +1,13 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import BaseHead from '../../components/BaseHead.astro';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import BaseHead from '../../../components/BaseHead.astro';
 
 export async function getStaticPaths() {
 	const tips = await getCollection('tips');
 
-	return tips.filter((item) => item.slug.split('/')[0] === 'en').map(page => {
-    const [lang, ...slug] = page.slug.split('/');		
+	return tips.map(page => {		
+    const [lang, ...slug] = page.slug.split('/');
 		
     return { params: { lang, slug: slug.join('/') || undefined }, props: page };
   });

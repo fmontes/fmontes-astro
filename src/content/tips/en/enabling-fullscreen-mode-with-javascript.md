@@ -2,7 +2,6 @@
 title: Enabling Fullscreen Mode on Your Web Page Using JavaScript
 description: Learn how to make your web page fullscreen with JavaScript to provide a more immersive user experience.
 date: 2024-02-08
-slug: enabling-fullscreen-mode-with-javascript
 ---
 
 Want to make your web page more immersive? Use JavaScript to enable fullscreen mode and enhance the user experience.

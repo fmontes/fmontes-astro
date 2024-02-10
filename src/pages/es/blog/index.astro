@@ -1,21 +1,20 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_SUBTITLE } from '../consts';
 import { getCollection } from 'astro:content';
 
-import PageLayout from '../layouts/PageLayout.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Intro from '../components/Intro.astro';
-import BlogListItem from '../components/BlogListItem.astro';
+import BlogListItem from '../../../components/BlogListItem.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
+import BaseHead from '../../../components/BaseHead.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 
 const posts = (await getCollection('blog'))
-  .filter((item) => item.slug.split('/')[0] === 'en')
+  .filter((item) => item.slug.split('/')[0] === 'es')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <PageLayout>
-  <BaseHead title={`${SITE_TITLE} | ${SITE_SUBTITLE}`} description={`${SITE_DESCRIPTION}`} slot="meta" />
+  <BaseHead title={`${SITE_TITLE} | Blog`} description={`${SITE_DESCRIPTION}`} slot="meta" />
   <Fragment slot="main">
-    <Intro />
     <section>
       <ul>
         {
